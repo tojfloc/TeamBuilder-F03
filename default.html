@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>SIBK F03</title>
+    <title>SIBK F06</title>
     <link href="styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -25,11 +25,31 @@
         });
     </script>
    
+   <script>
+       $(function () {
+           $("#theEagle").click(function () {
+               $("#3rdLine").toggle("slow", function () {
+                   // Animation complete.
+               });
+
+               $(document).ready(function () {
+                   $("#main").toggle(function () {
+                       $(this).animate({ height: 660 }, 100);
+                   }, function () {
+                       $(this).animate({ height: 490 }, 1000);
+                   });
+               });
+
+
+           });
+       });
+   </script>
+    
 </head>
 <body>
 
     <center>
-        <img src="eagle.jpg" width="250px" style="padding:25px; " /><br />
+        <img src="eagle.jpg" id="theEagle" width="250" style="padding:25px;"/><br />
             <div class="main">
                 <div class="lineup">
                         <div class="vf snap-target"></div>
@@ -38,6 +58,7 @@
                         <div class="vb snap-target"></div>
                         <div class="hb snap-target"></div>
                     </div>
+
 					<div class="lineup">
 						<div class="vf snap-target"></div>
 						<div class="c snap-target"></div>
@@ -45,20 +66,23 @@
 						<div class="vb snap-target"></div>
 						<div class="hb snap-target"></div>
 					</div>
-					<div class="lineup">
+					
+					<div class="lineup" id="3rdLine" style="display:none">
 						<div class="vf snap-target"></div>
 						<div class="c snap-target"></div>
 						<div class="hf snap-target"></div>
 						<div class="vb snap-target"></div>
 						<div class="hb snap-target"></div>
 					</div>
+
                 <div class="lineup-goalkeeper">
                     <div class="goalkeeper snap-target"></div>
                 </div>
 
 </div>
         <br /><br />
-        <div class="players" id="players">
+
+<div class="players" id="players">
 <div class="draggable">1 Player</div>
 <div class="draggable">2 Player</div>
 <div class="draggable">3 Player</div>
@@ -68,9 +92,9 @@
 <div class="draggable">1 Player</div>
 <div class="draggable">2 Player</div>
 <div class="draggable">3 Player</div>
-        </div>
+</div>
        
-        <h1>Laguppställningar SIBK F-03</h1>
+        <h1>Laguppställningar SIBK F-06</h1>
         <br />Dra spelar till rätt possition, använd safari och välj sen att spara som pdf, dela till google drive.
         <br /><br /><br /><br /><br /><br />
     </center>
